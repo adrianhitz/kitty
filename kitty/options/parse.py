@@ -1146,6 +1146,9 @@ class Parser:
     def tab_activity_symbol(self, val: str, ans: typing.Dict[str, typing.Any]) -> None:
         ans['tab_activity_symbol'] = tab_activity_symbol(val)
 
+    def tab_activity_symbol_color(self, val: str, ans: typing.Dict[str, typing.Any]) -> None:
+        ans['tab_activity_symbol_color'] = to_color(val)
+
     def tab_bar_background(self, val: str, ans: typing.Dict[str, typing.Any]) -> None:
         ans['tab_bar_background'] = to_color_or_none(val)
 

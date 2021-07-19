@@ -402,6 +402,7 @@ option_names = (  # {{{
  'symbol_map',
  'sync_to_monitor',
  'tab_activity_symbol',
+ 'tab_activity_symbol_color',
  'tab_bar_background',
  'tab_bar_edge',
  'tab_bar_margin_height',
@@ -532,6 +533,7 @@ class Options:
     strip_trailing_spaces: choices_for_strip_trailing_spaces = 'never'
     sync_to_monitor: bool = True
     tab_activity_symbol: typing.Optional[str] = None
+    tab_activity_symbol_color: Color = Color(red=255, green=0, blue=0)
     tab_bar_background: typing.Optional[kitty.rgb.Color] = None
     tab_bar_edge: int = 3
     tab_bar_margin_height: TabBarMarginHeight = TabBarMarginHeight(outer=0, inner=0)

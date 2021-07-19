@@ -934,6 +934,13 @@ does not have focus has some activity.
 '''
     )
 
+opt('tab_activity_symbol_color', '#ff0000',
+    option_type='to_color',
+    long_text='''
+The color for the tab activity symbol.
+''' 
+    )
+
 opt('tab_title_template', '"{title}"',
     option_type='tab_title_template',
     long_text='''

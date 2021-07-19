@@ -43,6 +43,7 @@ class DrawData(NamedTuple):
     title_template: str
     active_title_template: Optional[str]
     tab_activity_symbol: Optional[str]
+    tab_activity_symbol_color: Color
     powerline_style: PowerlineStyle
 
 
@@ -124,7 +125,7 @@ def draw_title(draw_data: DrawData, screen: Screen, tab: TabBarData, index: int)
         screen.cursor.fg = fg
     if tab.has_activity_since_last_focus and draw_data.tab_activity_symbol:
         fg = screen.cursor.fg
-        screen.cursor.fg = draw_data.bell_fg
+        screen.cursor.fg = draw_data.tab_activity_symbol_color
         screen.draw(draw_data.tab_activity_symbol)
         screen.cursor.fg = fg
 
@@ -332,6 +333,7 @@ class TabBar:
             opts.tab_bar_background or opts.background, opts.tab_title_template,
             opts.active_tab_title_template,
             opts.tab_activity_symbol,
+            as_rgb(color_as_int(opts.tab_activity_symbol_color)),
             opts.tab_powerline_style
         )
         if opts.tab_bar_style == 'separator':

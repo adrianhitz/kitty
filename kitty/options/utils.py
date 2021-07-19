@@ -617,6 +617,10 @@ def tab_activity_symbol(x: str) -> Optional[str]:
     return x or None
 
 
+def tab_activity_symbol_color(x: str) -> Color:
+    return to_color(x)    
+
+
 def tab_title_template(x: str) -> str:
     if x:
         for q in '\'"':
